@@ -15,6 +15,10 @@ function back(){
 function calcular(){
     let resultado = document.querySelector('#resultado').innerHTML;
     if(resultado){
+        if (resultado.includes('%')){
+            resultado = resultado.split('%')
+            resultado = (resultado[1] / 100) * resultado[0]
+        }
         document.querySelector('#resultado').innerHTML = eval(resultado);   
     }
 
